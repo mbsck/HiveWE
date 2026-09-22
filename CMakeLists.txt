@@ -107,8 +107,8 @@ endif()
 
 target_compile_options(HiveWE_lib PUBLIC
 	$<$<CXX_COMPILER_ID:MSVC>:/Zc:__cplusplus /MP /sdl /diagnostics:caret /permissive->
-	$<$<CXX_COMPILER_ID:Clang>:-Wextra -Wpedantic -Werror -Wno-multichar>
-	$<$<CXX_COMPILER_ID:GNU>:-Wall -Wextra -Wpedantic -Werror -Wno-multichar>
+	$<$<CXX_COMPILER_ID:Clang>:-Wextra -Wpedantic -Werror -Wno-multichar -Wno-reserved-module-identifier>
+	$<$<CXX_COMPILER_ID:GNU>:-Wall -Wextra -Wpedantic -Werror -Wno-multichar -Wno-reserved-module-identifier>
 )
 
 target_compile_definitions(HiveWE_lib PUBLIC
