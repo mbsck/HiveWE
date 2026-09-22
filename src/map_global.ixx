@@ -1,5 +1,5 @@
 export module MapGlobal;
 
-import Map;
+export class Map;
 
 export inline Map* map = nullptr;
