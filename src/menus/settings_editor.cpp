@@ -50,7 +50,7 @@ SettingsEditor::SettingsEditor(QWidget* parent)
 		save();
 		QSettings settings;
 		QFile file("data/themes/" + settings.value("theme").toString() + ".qss");
-		file.open(QFile::ReadOnly);
+    (void)file.open(QFile::ReadOnly);
 		QString StyleSheet = QLatin1String(file.readAll());
 
 		qApp->setStyleSheet(StyleSheet);
