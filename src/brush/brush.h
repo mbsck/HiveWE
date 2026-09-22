@@ -51,7 +51,7 @@ class Brush: public QObject {
 	}
 
 	virtual void key_press_event(WorldEditContext& ctx, const QKeyEvent* event);
-	virtual void key_release_event(WorldEditContext& ctx, const QKeyEvent* event) {}
+	virtual void key_release_event([[maybe_unused]] WorldEditContext& ctx, [[maybe_unused]] const QKeyEvent* event) {}
 	virtual void mouse_move_event(WorldEditContext& ctx, const QMouseEvent* event, double frame_delta);
 	virtual void mouse_press_event(WorldEditContext& ctx, const QMouseEvent* event, double frame_delta);
 	virtual void mouse_release_event(WorldEditContext& ctx, const QMouseEvent* event);
@@ -64,7 +64,7 @@ class Brush: public QObject {
 
 	virtual void clear_selection() {}
 
-	virtual void place_clipboard(WorldEditContext& ctx) {}
+	virtual void place_clipboard([[maybe_unused]] WorldEditContext& ctx) {}
 
 	virtual void clear_clipboard() {}
 
@@ -81,11 +81,11 @@ class Brush: public QObject {
 		return true;
 	}
 
-	virtual void apply_begin(WorldEditContext& ctx) {}
+	virtual void apply_begin([[maybe_unused]] WorldEditContext& ctx) {}
 
-	virtual void apply(WorldEditContext& ctx, double frame_delta) = 0;
+	virtual void apply([[maybe_unused]] WorldEditContext& ctx, [[maybe_unused]] double frame_delta) = 0;
 
-	virtual void apply_end(WorldEditContext& ctx) {}
+	virtual void apply_end([[maybe_unused]] WorldEditContext& ctx) {}
 
   protected:
 	Shape shape = Shape::circle;
@@ -112,7 +112,7 @@ class Brush: public QObject {
 
   public slots:
 
-	virtual void unselect_id(std::string_view id) {}
+	virtual void unselect_id([[maybe_unused]] std::string_view id) {}
 
   signals:
 	void size_changed(glm::ivec2 size);

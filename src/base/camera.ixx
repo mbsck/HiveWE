@@ -206,9 +206,9 @@ export struct Camera {
 		update(0.0);
 	}
 
-	void mouse_press_event(QMouseEvent* event) {}
+	void mouse_press_event([[maybe_unused]] QMouseEvent* event) {}
 
-	void mouse_release_event(QMouseEvent* event) {}
+	void mouse_release_event([[maybe_unused]] QMouseEvent* event) {}
 
 	void reset() {
 		distance = 20.f;

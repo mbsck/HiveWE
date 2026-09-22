@@ -11,7 +11,7 @@ export class AspectRatioPixmapLabel : public QLabel {
 
 	QPixmap pixmap;
 
-	QPixmap get_scaled_pixmap(bool grid_lines) {
+	QPixmap get_scaled_pixmap([[maybe_unused]] bool grid_lines) {
 		QPixmap new_pixmap(width(), height());
 
 		QPainter painter(&new_pixmap);
@@ -68,6 +68,7 @@ export class AspectRatioPixmapLabel : public QLabel {
 	}
 
 	void resizeEvent(QResizeEvent* e) override {
+    Q_UNUSED(e)
 		if (pixmap.isNull()) {
 			return;
 		}
