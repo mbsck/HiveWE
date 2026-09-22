@@ -12,7 +12,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/quaternion.hpp>
 
-import PathingTexture;
 import DoodadsUndo;
 import Doodads;
 import Terrain;

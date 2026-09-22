@@ -386,3 +386,5 @@ void ModelEditorGLWidget::reload_from_mdl() {
 	recenter_camera();
 	messages = mdx->validate();
 }
+
+#include "moc_model_editor_glwidget.cpp"

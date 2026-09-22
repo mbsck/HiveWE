@@ -245,3 +245,5 @@ void RegionPalette::deactivate(QRibbonTab* tab) {
 		selection_mode->disableShortcuts();
 	}
 }
+
+#include "moc_region_palette.cpp"

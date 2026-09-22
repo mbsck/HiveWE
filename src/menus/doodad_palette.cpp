@@ -711,3 +711,5 @@ void DoodadPalette::set_selection_rotation(float new_rotation) {
 	brush.set_selection_angle(glm::radians(new_rotation));
 	update_selection_info();
 }
+
+#include "moc_doodad_palette.cpp"

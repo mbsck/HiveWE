@@ -192,3 +192,5 @@ void UnitPalette::update_selection_info() {
 		}
 	}
 }
+
+#include "moc_unit_palette.cpp"

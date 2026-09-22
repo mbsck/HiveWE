@@ -1088,3 +1088,5 @@ QWidget* TableDelegate::create_icon_editor(QWidget* parent) const {
 
 	return editor;
 }
+
+#include "moc_single_model.cpp"

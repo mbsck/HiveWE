@@ -140,3 +140,5 @@ TextureButton* TilePather::create_tex_button(const TerrainTexture* tex) {
 	button->setToolTip(QString::fromUtf8(tex->name));
 	return button;
 }
+
+#include "moc_tile_pather.cpp"

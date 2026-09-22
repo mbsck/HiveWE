@@ -273,3 +273,5 @@ QString IconView::currentIconPath() {
 void IconView::setCurrentIconPath(QString path) {
 	finalPath->setText(path);
 }
+
+#include "moc_icon_view.cpp"

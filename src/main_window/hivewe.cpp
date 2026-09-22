@@ -871,3 +871,5 @@ void HiveWE::remove_custom_tab() {
 		}
 	}
 }
+
+#include "moc_hivewe.cpp"

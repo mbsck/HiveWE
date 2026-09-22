@@ -740,3 +740,5 @@ void DoodadBrush::unselect_id(const std::string_view id) {
 		set_doodad("ATtr");
 	}
 }
+
+#include "moc_doodad_brush.cpp"

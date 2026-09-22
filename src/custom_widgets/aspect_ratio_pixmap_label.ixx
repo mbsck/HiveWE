@@ -4,77 +4,61 @@ module;
 #include <QPainter>
 #include <QPixmap>
 
+#include "aspect_ratio_pixmap_label.h"
+
 export module AspectRatioPixmapLabel;
 
 export class AspectRatioPixmapLabel : public QLabel {
-	Q_OBJECT
+Q_OBJECT
 
-	QPixmap pixmap;
+QPixmap pixmap;
 
-	QPixmap get_scaled_pixmap([[maybe_unused]] bool grid_lines) {
-		QPixmap new_pixmap(width(), height());
+QPixmap get_scaled_pixmap(bool grid_lines) {
+	QPixmap new_pixmap(width(), height());
 
-		QPainter painter(&new_pixmap);
-		painter.fillRect(0, 0, width(), height(), Qt::black);
+	QPainter painter(&new_pixmap);
+	painter.fillRect(0, 0, width(), height(), Qt::black);
 
-		QPixmap scaled_pixmap = pixmap.scaled(width(), height(), Qt::KeepAspectRatio);
-		horizontal_border = (width() - scaled_pixmap.width()) / 2.f;
-		vertical_border = (height() - scaled_pixmap.height()) / 2.f;
+	QPixmap scaled_pixmap = pixmap.scaled(width(), height(), Qt::KeepAspectRatio);
+	horizontal_border = (width() - scaled_pixmap.width()) / 2.f;
+	vertical_border = (height() - scaled_pixmap.height()) / 2.f;
 
-		painter.drawPixmap(horizontal_border, vertical_border, scaled_pixmap);
+	painter.drawPixmap(horizontal_border, vertical_border, scaled_pixmap);
 
-		/*if (grid_lines) {
-			auto tt = new_pixmap.width();
-			auto ttt = pixmap.width();
+	return new_pixmap;
+}
 
-			const int horizontal_spacing = new_pixmap.width() / pixmap.width();
-			const int vertical_spacing = new_pixmap.height() / pixmap.height();
+public:
+AspectRatioPixmapLabel() {
+setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+}
 
-			if (horizontal_spacing > 2) {
-				for (int i = 1; i < pixmap.width(); i++) {
-					painter.drawLine(i * horizontal_spacing, 0, i * horizontal_spacing, new_pixmap.height());
-				}
-			}
+using QLabel::QLabel;
 
-			if (vertical_spacing > 2) {
-				for (int j = 1; j < pixmap.height(); j++) {
-					painter.drawLine(0, vertical_spacing * j, new_pixmap.width(), vertical_spacing * j);
-				}
-			}
-			painter.end();
-		}*/
+int horizontal_border;
+int vertical_border;
 
-		return new_pixmap;
+public slots:
+void setPixmap(const QPixmap& p) {
+pixmap = p;
+
+	if (pixmap.isNull()) {
+		return;
 	}
 
-  public:
-	AspectRatioPixmapLabel() {
-		setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-	}
-	using QLabel::QLabel;
+	QLabel::setPixmap(get_scaled_pixmap(false));
+}
 
-	int horizontal_border;
-	int vertical_border;
+void resizeEvent(QResizeEvent* e) override {
+	Q_UNUSED(e)
 
-  public slots:
-	void setPixmap(const QPixmap& p) {
-		pixmap = p;
-
-		if (pixmap.isNull()) {
-			return;
-		}
-
-		QLabel::setPixmap(get_scaled_pixmap(false));
+	if (pixmap.isNull()) {
+		return;
 	}
 
-	void resizeEvent(QResizeEvent* e) override {
-    Q_UNUSED(e)
-		if (pixmap.isNull()) {
-			return;
-		}
+	QLabel::setPixmap(get_scaled_pixmap(false));
+}
 
-		QLabel::setPixmap(get_scaled_pixmap(false));
-	}
 };
 
 #include "aspect_ratio_pixmap_label.moc"

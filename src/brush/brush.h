@@ -8,7 +8,7 @@
 #include <memory>
 #include <string_view>
 
-import Shader;
+class Shader;
 
 struct WorldEditContext;
 

@@ -41,3 +41,5 @@ void MapInfoEditor::save() const {
 	save_options(info);
 	save_map_size(map);
 }
+
+#include "moc_map_info_editor.cpp"

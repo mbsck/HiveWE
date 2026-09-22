@@ -73,3 +73,5 @@ export class GameplayConstants {
 		war3mapMisc.save(hierarchy.map_directory / "war3mapMisc.txt");
 	}
 };
+
+#include "moc_gameplay_constants_editor.cpp"

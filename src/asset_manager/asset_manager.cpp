@@ -566,3 +566,5 @@ void AssetManager::show_context_menu(const QPoint& pos) {
 		menu.exec(tree_view->viewport()->mapToGlobal(pos));
 	}
 }
+
+#include "moc_asset_manager.cpp"

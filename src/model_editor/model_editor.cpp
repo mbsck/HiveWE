@@ -213,3 +213,5 @@ std::expected<ads::CDockWidget*, std::string> ModelEditor::open_model(const fs::
 
 	return dock_tab;
 }
+
+#include "moc_model_editor.cpp"

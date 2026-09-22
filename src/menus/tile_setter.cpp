@@ -318,3 +318,5 @@ void TileSetter::save_tiles() {
 	terrain.change_tileset(new_terrain_textures, from_to_id, new_tileset, tilesets, info);
 	close();
 }
+
+#include "moc_tile_setter.cpp"

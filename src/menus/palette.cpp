@@ -22,3 +22,5 @@ void Palette::release_brush(Brush* brush) {
 //		shortcuts.push_back(new QShortcut(sequence, i));
 //	}
 //}
+
+#include "moc_palette.cpp"

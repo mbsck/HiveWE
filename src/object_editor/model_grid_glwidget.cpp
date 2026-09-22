@@ -541,3 +541,5 @@ void ModelGridGLWidget::emit_layout_change() {
 	emit content_height_changed(content_height_px());
 	emit scroll_changed(scroll_offset_y);
 }
+
+#include "moc_model_grid_glwidget.cpp"

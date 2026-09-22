@@ -10,6 +10,7 @@ import OpenGLUtilities;
 import ResourceManager;
 import Globals;
 import WorldUndoManager;
+import Shader;
 
 Brush::Brush() {
 	set_size(size);
@@ -238,3 +239,5 @@ void Brush::render_selector() const {
 }
 
 void Brush::render_brush() {}
+
+#include "moc_brush.cpp"
