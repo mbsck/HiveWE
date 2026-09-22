@@ -4,8 +4,6 @@ target_sources(HiveWE_lib PUBLIC FILE_SET yeet TYPE CXX_MODULES FILES
 	"globals.ixx"
 
 	"base/map/map.ixx"
-	"base/map/resize.cpp"
-	"base/map/unused_files.cpp"
 	"base/map/protection.ixx"
 	"base/binary_reader.ixx"
 	"base/doodad.ixx"
@@ -37,8 +35,6 @@ target_sources(HiveWE_lib PUBLIC FILE_SET yeet TYPE CXX_MODULES FILES
 	"base/terrain.ixx"
 
 	"base/triggers/triggers.ixx"
-	"base/triggers/gui.cpp"
-	"base/triggers/map_script.cpp"
 
 	"file_formats/blp.ixx"
 	"file_formats/casc.ixx"
@@ -110,6 +106,14 @@ target_sources(HiveWE_lib PUBLIC FILE_SET yeet TYPE CXX_MODULES FILES
 
 	"test.ixx"
 	"object_editor/ability_list_editor.ixx"
+)
+
+target_sources(HiveWE_lib
+    PRIVATE
+        "base/map/resize.cpp"
+        "base/map/unused_files.cpp"
+        "base/triggers/gui.cpp"
+        "base/triggers/map_script.cpp"
 )
 
 target_sources(HiveWE PRIVATE
